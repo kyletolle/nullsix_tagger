@@ -1,23 +1,21 @@
-<h1>Listing links</h1>
+<%= render 'form' %>
 
-<table>
-  <tr>
-    <th>Url</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
+<% if flash[:created] %>
+  <h1 style="line-height:2em;">Tagged Link: <%= link_to @tagged_link.url %></h1>
+<% end %>
 
-<% @links.each do |link| %>
-  <tr>
-    <td><%= link.url %></td>
-    <td><%= link_to 'Show', link %></td>
-    <td><%= link_to 'Edit', edit_link_path(link) %></td>
-    <td><%= link_to 'Destroy', link, confirm: 'Are you sure?', method: :delete %></td>
-  </tr>
+<% if !@links.empty? %>
+  <table>
+    <tr>
+      <th>recently tagged links</th>
+      <th></th>
+    </tr>
+  
+  <% @links.each do |link| %>
+    <tr>
+      <td><%= link_to link.url %></td>
+      <td><%= link_to 'Destroy', link, confirm: 'Are you sure?', method: :delete %></td>
+    </tr>
+  <% end %>
 <% end %>
 </table>
-
-<br />
-
-<%= link_to 'New Link', new_link_path %>
