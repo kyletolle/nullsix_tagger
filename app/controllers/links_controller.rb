@@ -5,7 +5,7 @@ class LinksController < ApplicationController
     @tagged_link = Link.last
     
     @link = Link.new
-    @links = Link.all
+    @links = Link.find :all, :order => "id DESC", :limit => 10
 
     respond_to do |format|
       format.html # index.html.erb
