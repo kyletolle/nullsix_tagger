@@ -1,4 +1,6 @@
 class Link < ActiveRecord::Base
+  scope :latest, lambda { |count| order("id DESC").limit(count) }
+
   validates :url, :presence => true
   before_save :tag_url
 
