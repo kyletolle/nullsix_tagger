@@ -7,11 +7,11 @@
 
 <% if !@links.empty? %>
   <br /><br />
-  <div><h2>recently tagged links</h2></div>
+  <div><h3>recently tagged links</h3></div>
   
   <% @links.each do |link| %>
     <div>
-      <p><%= link_to link.url, link.url %>
-      <%= link_to 'Destroy', link, confirm: 'Are you sure?', method: :delete %></p>
+      <h4><%= link_to link.url, link.url %></h4>
+      <%= link_to 'Destroy', link, confirm: 'Are you sure?', method: :delete %>
   <% end %>
 <% end %>

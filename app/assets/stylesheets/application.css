@@ -11,15 +11,3 @@
  *= require_self
  *= require_tree .
 */
-
-header h1 {
-  font-size: 3em;
-}
-
-form label {
-  font-size: 2em;
-}
-
-form input {
-  font-size: 2em;
-}
