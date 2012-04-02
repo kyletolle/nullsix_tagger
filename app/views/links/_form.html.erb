@@ -1,23 +1,22 @@
-<%= form_for(@link, :html => { :class => 'form-horizontal form-inline' }) do |f| %>
-  <% if @link.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@link.errors.count, "error") %> prohibited this link from being saved:</h2>
+<div class="bottom-padding">
+  <%= form_for(@link, :html => { :class => 'form-inline' }) do |f| %>
+    <% if @link.errors.any? %>
+      <div id="error_explanation">
+        <h3><%= pluralize(@link.errors.count, "error") %> kept this link from being saved:</h3>
 
-      <ul>
-      <% @link.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
+        <ul>
+        <% @link.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+        </ul>
+      </div>
+    <% end %>
 
-  <div class="field control-group">
-    <%= f.label :url, "URL:", :class => 'control-label' %>
-    <div class="controls">
-      <div class="input-append">
-        <%= f.text_field :url, :size => 20, :class => "input-large span7" %>
+    <div class="control-group">
+      <div class="controls">
+        <%= f.text_field :url, :size => 20, :class => "input-large span8", :placeholder => "Amazon URL" %>
         <%= f.submit "tag!", :class => "btn btn-primary btn-large" %>
       </div>
     </div>
-  </div>
-<% end %>
+  <% end %>
+</div>
