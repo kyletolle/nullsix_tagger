@@ -50,7 +50,7 @@ class LinksController < ApplicationController
         format.html { flash[:created] = "Created"; redirect_to '/' }
         #format.json { render json: @link, status: :created, location: @link }
       else
-        format.html { render action: "index" }
+        format.html { redirect_to '/' }
         #format.json { render json: @link.errors, status: :unprocessable_entity }
       end
     end
