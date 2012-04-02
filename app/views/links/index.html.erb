@@ -1,16 +1,24 @@
 <%= render 'form' %>
 
 <% if flash[:created] %>
-  <h1 style="line-height:2em;">Tagged Link: <%= link_to @tagged_link.url, @tagged_link.url %></h1>
+  <div class="bottom-padding">
+    <h1>Tagged Link: <%= link_to @tagged_link.url, @tagged_link.url %></h1>
+  </div>
 <% end %>
 
 <% if !@links.empty? %>
-  <h3>recently tagged links</h3>
+  <div class="bottom-padding">
+    <h3>recently tagged links</h3>
   
-  <% @links.each do |link| %>
-    <div>
-      <h4><%= link_to link.url, link.url %></h4>
-      <%= link_to 'Destroy', link, confirm: 'Are you sure?', method: :delete %>
-    </div>
-  <% end %>
+    <% @links.each do |link| %>
+      <div class="bottom-padding-small">
+        <h4><%= link_to link.url, link.url %>
+        <%= link_to 'Delete', link,
+                    confirm: 'Are you sure?',
+                    method: :delete,
+                    class: "btn btn-mini btn-danger" %>
+              </h4>
+      </div>
+    <% end %>
+  </div>
 <% end %>

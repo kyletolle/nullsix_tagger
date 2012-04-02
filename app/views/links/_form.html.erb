@@ -1,9 +1,12 @@
 <div class="bottom-padding">
-  <%= form_for(@link, :html => { :class => 'form-inline' }) do |f| %>
+  <%= form_for(@link, :html => { class: 'form-inline' }) do |f| %>
     <div class="control-group">
       <div class="controls">
-        <%= f.text_field :url, :size => 20, :class => "input-large span8", :placeholder => "Amazon URL" %>
-        <%= f.submit "tag!", :class => "btn btn-primary btn-large" %>
+        <%= f.text_field :url,
+              size: 20,
+              class: "input-large span8",
+              placeholder: "Amazon URL" %>
+        <%= f.submit "tag!", class: "btn btn-primary btn-large" %>
       </div>
     </div>
   <% end %>
