@@ -1,4 +1,6 @@
 class Link < ActiveRecord::Base
+  attr_accessible :url
+
   scope :latest, lambda { |count| order("id DESC").limit(count) }
 
   validates :url, :presence => true

@@ -1,4 +1,6 @@
 NullsixTagger::Application.routes.draw do
+  get "admins/new"
+
   resources :links
   root :to => 'links#index'
 
