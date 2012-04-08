@@ -2,22 +2,19 @@
 <html lang="en">
 <head>
   <title>nullsix tagger</title>
-  <%= stylesheet_link_tag    "application", :media => "all" %>
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <%= render 'layouts/stylesheets' %>
 </head>
 <body>
   <div class="container">
     <div class="row">
       <div class="span12">
-        <header><h1>nullsix tagger</h1></header>
+        <%= render 'layouts/header' %>
 
         <%= yield %>
 
-        <footer>
-          <h5>copyright 2012 <%= link_to "nullsix", "http://www.nullsix.com" %></h5>
-        </footer>
+        <%= render 'layouts/footer' %>
       </div>
     </div>
   </div>
