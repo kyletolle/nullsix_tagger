@@ -1,0 +1,12 @@
+<section>
+<h2>Admins</h2>
+  <% if @admins.any? %>
+    <% @admins.each do |admin| %>
+      <div>
+        <p><%= admin.name %></p>
+      </div>
+    <% end %>
+  <% else %>
+    <h3>There are no admins.</h3>
+  <% end %>
+</section>

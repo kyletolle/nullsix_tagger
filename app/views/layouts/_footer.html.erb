@@ -1,4 +1,9 @@
 <footer>
   <h5>copyright 2012 <%= link_to "nullsix", "http://www.nullsix.com" %></h5>
-  <%= debug(params) if Rails.env.development? %>
+  
+  <% if Rails.env.development? %>
+    <div style="text-align: left;">
+      <%= debug(params) %>
+    </div>
+  <% end %>
 </footer>
