@@ -1,13 +1,13 @@
 <%= render 'form' %>
 
 <% if flash[:created] %>
-  <div class="bottom-padding">
+  <section>
     <h1>Tagged Link: <%= link_to @tagged_link.url, @tagged_link.url %></h1>
-  </div>
+  </section>
 <% end %>
 
 <% if !@links.empty? %>
-  <div class="bottom-padding">
+  <section>
     <h3>recently tagged links</h3>
   
     <% @links.each do |link| %>
@@ -19,5 +19,5 @@
               </h4>
       </div>
     <% end %>
-  </div>
+  </section>
 <% end %>
