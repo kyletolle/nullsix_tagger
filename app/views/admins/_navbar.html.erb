@@ -5,10 +5,10 @@
         <%= link_to "Admin", admins_path, class: "brand" %>
 
         <ul class="nav">
-          <li class="active">
+          <li <%= 'class="active"'.html_safe if params[:action] == "index"%>>
             <%= link_to "All", admins_path %>
           </li>
-          <li>
+          <li <%= 'class="active"'.html_safe if params[:action] == "new"%>>
             <%= link_to "Create", new_admin_path %>
           </li>
         </ul>
