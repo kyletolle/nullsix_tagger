@@ -1,48 +1,46 @@
+<%= render 'admins/navbar' %>
+
 <section>
   <div class="row">
-    <div class="span4 offset4">
+    <div class="span4">
       <%= form_for(@admin) do |f| %>
-        <fieldset>
-          <legend>Create an Admin</legend>
+        <%= render 'shared/error_messages' %>
 
-          <%= render 'shared/error_messages' %>
-
-          <div class="control-group">
-            <div class="controls">
-              <%= f.text_field :name,
-                    placeholder: :name.capitalize,
-                    class: "span4" %>
-            </div>
+        <div class="control-group">
+          <div class="controls">
+            <%= f.text_field :name,
+                  placeholder: :name.capitalize,
+                  class: "span4" %>
           </div>
+        </div>
 
-          <div class="control-group">
-            <div class="controls">
-              <%= f.text_field :email,
-                    placeholder: :email.capitalize,
-                    class: "span4" %>
-            </div>
+        <div class="control-group">
+          <div class="controls">
+            <%= f.text_field :email,
+                  placeholder: :email.capitalize,
+                  class: "span4" %>
           </div>
+        </div>
 
-          <div class="control-group">
-            <div class="controls">
-              <%= f.password_field :password,
-                    placeholder: :password.capitalize,
-                    class: "span4" %>
-            </div>
+        <div class="control-group">
+          <div class="controls">
+            <%= f.password_field :password,
+                  placeholder: :password.capitalize,
+                  class: "span4" %>
           </div>
+        </div>
 
-          <div class="control-group">
-            <div class="controls">
-              <%= f.password_field :password_confirmation,
-                    placeholder: "Password Confirmation",
-                    class: "span4" %>
-            </div>
+        <div class="control-group">
+          <div class="controls">
+            <%= f.password_field :password_confirmation,
+                  placeholder: "Password Confirmation",
+                  class: "span4" %>
           </div>
+        </div>
 
-          <div class="form-actions">
-            <%= f.submit "Create", class: "btn btn-primary btn-large" %>
-          </div>
-      </fieldset>
+        <div class="form-actions">
+          <%= f.submit "Create", class: "btn btn-primary btn-large" %>
+        </div>
       <% end %>
     </div>
   </div>
