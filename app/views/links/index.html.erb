@@ -1,23 +1,31 @@
 <%= render 'form' %>
 
-<% if flash[:created] %>
-  <section>
-    <h1>Tagged Link: <%= link_to @tagged_link.url, @tagged_link.url %></h1>
-  </section>
-<% end %>
-
 <% if !@links.empty? %>
   <section>
-    <h3>recently tagged links</h3>
-  
-    <% @links.each do |link| %>
-      <div class="bottom-padding-small">
-        <h4><%= link_to link.url, link.url %>
-        <%= link_to 'Delete', link,
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <td colspan="2">
+            <h3>recently tagged links</h3>
+          </td>
+        </tr>
+      </thead>
+      <tbody>
+
+        <% @links.each do |link| %>
+          <tr class="bottom-padding-small">
+            <td>
+              <%= link_to "<i class=\"icon-trash icon-white\"></i>".html_safe, link,
                     method: :delete,
                     class: "btn btn-mini btn-danger" %>
-              </h4>
-      </div>
-    <% end %>
+            </td>
+            <td>
+              <h4><%= link_to link.url, link.url %>
+            </td>
+          </tr>
+        <% end %>
+
+      </tbody>
+    </table>
   </section>
 <% end %>

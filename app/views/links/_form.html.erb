@@ -1,13 +1,21 @@
 <section>
-  <%= form_for(@link, :html => { class: 'form-inline' }) do |f| %>
-    <div class="control-group">
-      <div class="controls">
-        <%= f.text_field :url,
-              size: 20,
-              class: "input-large span8",
-              placeholder: "Amazon URL" %>
-        <%= f.submit "tag!", class: "btn btn-primary btn-large" %>
+  <div id="tagger" class="hero-unit">
+    <%= form_for(@link, :html => { class: 'form-inline' }) do |f| %>
+      <div class="control-group">
+        <div class="controls">
+          <%= f.text_field :url,
+                size: 20,
+                class: "input-large span8",
+                placeholder: "Amazon URL" %>
+          <%= f.submit "tag!", class: "btn btn-primary btn-large" %>
+        </div>
       </div>
-    </div>
-  <% end %>
+    <% end %>
+
+    <% if flash[:created] %>
+      <section>
+        <h1><small>Tagged Link: </small><%= link_to @tagged_link.url, @tagged_link.url %></h1>
+      </section>
+    <% end %>
+  </div>
 </section>
